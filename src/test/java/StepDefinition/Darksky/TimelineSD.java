@@ -18,7 +18,7 @@ public class TimelineSD {
     }
     @When("^I verify timeline is displayed with (\\d+) hours increment$")
     public void verifyIncrement(int increment){
-    Assert.assertEquals(landingPage.increment(),increment);
+    Assert.assertEquals(landingPage.timeline(),landingPage.currentTime(increment));
 
     }
 }

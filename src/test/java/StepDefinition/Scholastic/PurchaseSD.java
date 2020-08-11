@@ -24,8 +24,8 @@ public class PurchaseSD {
             e.printStackTrace();
         }
     }
-   /* @When("^I go to 'BY FlYER' category$")
+    @When("^I go to 'BY FlYER' category$")
     public void flyer(){
 
-    }*/
+    }
 }

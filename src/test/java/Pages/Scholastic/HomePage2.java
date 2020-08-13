@@ -11,17 +11,20 @@ By signInLocator = By.xpath("//ul/child::li[1]/a[@class='signin']");
 By emailLocator = By.xpath("//input[@class='input-text email-input email no-mouseflow required']");
 By passwordLocator = By.xpath("//input[@class='input-text password-input validatepassword no-mouseflow required']");
 By signInButtonLocator = By.xpath("//button[@class='home-page-login-btn  sign-in-mod']");
-By eOrdersLocator = By.xpath("//body/div[1]/div[3]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/ul/li[1]/a");
+By eOrdersLocator = By.xpath("(//*[@id='enter-orders'])[2]");
 By yourTeacherOrderL= By.xpath("//body/div[1]/div[3]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/ul/li[1]/div[1]/div[1]/div[1]/ul/li[3]");
 By byFlyerLocator = By.xpath("//div[@id='digimag-allfyer']/ul[1]/li[1]");
-By quantityLocator = By.xpath("//input[@data-itemid='1Y1']");//input[@data-isbn13='9781338737547']
+By quantityLocator = By.xpath("//input[@data-itemid='1Y1']");
 By reviewCartLocator = By.xpath("//button[contains(text(), 'Review Cart')]");
 By pCheckoutLocator = By.xpath("//button[@id='dwfrm_cart_checkoutCart']");
-By p2CheckoutLocator = By.xpath("//div[@id='dialog-container']/div[1]/div[1]/form[2]");
+By p2CheckoutLocator = By.xpath("(//button[@name='dwfrm_cart_checkoutCart'])[2]");
 By orderTotalLocator = By.xpath("//span[@id='order_total']");
 By notificationCloseLocator = By.xpath("//span[@class='notification-close']");
 By itemPriceLocator = By.xpath("//tr[@data-product-id='1Y1']/td[4]");
 By rewardOrderLocator = By.xpath("//span[@id='rewardsTotal']");
+By myAccLocator = By.xpath("//a[@class='user-account toggle-item']");
+By profileLocator = By.xpath("//a[@title='Profile']");
+
 public void login(){
     clickThis(signInLocator);
     try {
@@ -72,7 +75,7 @@ public void flyer(){
     }
 }
 public void quantity(){
-  /*  clearField(quantityLocator);
+/*    clearField(quantityLocator);
     try {
         Thread.sleep(1000);
     } catch (InterruptedException e) {
@@ -85,9 +88,7 @@ public void quantity(){
         e.printStackTrace();
     }
 }
-/*public String price(){
-    return getTextFromElement(itemPriceLocator);//returns the text for items price
-}*/
+
     public void review(){
     clickThis(reviewCartLocator);
         try {
@@ -122,6 +123,21 @@ public void quantity(){
     }
     public String orderTotal(){
         return getTextFromElement(orderTotalLocator);
+    }
+
+    public void myProfile(){
+        clickThis(myAccLocator);
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        clickThis(profileLocator);
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
 
